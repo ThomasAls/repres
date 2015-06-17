@@ -1,5 +1,5 @@
 ---
-title: "WorstSlidyEver"
+title: "Worst Slidy Ever"
 author: "group1"
 date: "17. jun. 2015"
 output: slidy_presentation
@@ -13,6 +13,12 @@ setwd("/Users/tdas/Documents/R/ReproducibleResearch_and_DataVisualisation_in_R/R
 library(ggplot2)
 data(mpg)
 ```
+
+## Exploring data... 
+```{r, message=FALSE}
+pairs(mpg)
+```
+
 
 ## Plot of fuel consumption
 
