@@ -1,0 +1,27 @@
+---
+title: "WorstSlidyEver"
+author: "group1"
+date: "17. jun. 2015"
+output: slidy_presentation
+---
+
+## Loading...
+
+Loading ggplot2 packages and data
+```{r}
+setwd("/Users/tdas/Documents/R/ReproducibleResearch_and_DataVisualisation_in_R/RepResDatViz_ALS/StudentMaterials/turtorailKnitr_ALS")
+library(ggplot2)
+data(mpg)
+```
+
+## Plot of fuel consumption
+
+```{r, message=FALSE}
+ggplot(mpg,aes(x=displ,y=cty,fill=drv,colour=drv))+
+  geom_point(stat="identity",position="identity")+
+  geom_smooth(size=1)+scale_color_hue("Drive:", breaks=c(1,2,3),labels=c("4wd","front","rear"))
+```
+
+
+
+

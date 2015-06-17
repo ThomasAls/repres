@@ -1,0 +1,45 @@
+\documentclass{article}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage[lofdepth,lotdepth]{subfig}
+\title{KnitR tutorial}
+\author{Thomas D. Als}
+\begin{document}
+\maketitle
+
+Loading packages and data:
+<<>>=
+setwd("/Users/tdas/Documents/R/ReproducibleResearch_and_DataVisualisation_in_R/RepResDatViz_ALS/StudentMaterials/turtorailKnitr_ALS")
+library(ggplot2)
+data(mpg)
+@
+
+Explore data
+<<data.structure>>=
+head(mpg)
+str(mpg)
+@
+
+<<plot01,fig.cap="Figure 1: pairs plot of all variables">>=
+pairs(mpg)
+@
+
+
+Initial plot of the following variables:
+displ = engine displacement, in litres
+cty = city miles per gallon
+model = model
+drv = f = fron wheel, r = rear wheel, 4 = four wheel
+<<plot02, fig.cap="Figure 2: City miles per gallon as a function of engine displacement for 4-wheele drive (4), front-wheel drive (f) and rear-wheel drive (r) cars.">>=
+ggplot(mpg,aes(x=displ,y=cty,fill=drv,colour=drv))+geom_point(stat="identity",position="identity")+geom_smooth(size=1)+scale_color_hue("Drive:", breaks=c(1,2,3),labels=c("4wd","front","rear"))
+@
+
+Four-wheel-drived cars are less ecomomical per miles
+
+
+<<>>=
+
+@
+
+
+\end{document}
